@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textViewKelimeTestiTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:layout_marginBottom="@dimen/view_margin_xxlarge"
+        android:text="@string/fragment_welcome_title"
+        android:textSize="@dimen/textsize_xlarge"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textViewKelimeTestiDescription"/>
+
+    <TextView
+        android:id="@+id/textViewKelimeTestiDescription"
+        android:layout_width="275dp"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/textsize_normal"
+        android:layout_marginTop="@dimen/view_margin_small"
+        android:text="@string/fragment_welcome_description"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSimdiBasla"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewKelimeTestiTitle" />
+
+    <Button
+        android:id="@+id/buttonSimdiBasla"
+        android:layout_width="210dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="@dimen/view_margin_xxlarge"
+        android:background="@drawable/button_start"
+        android:text="Şimdi Başla"
+        android:onClick="buttonStart"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/imageOfWellPeople"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewKelimeTestiDescription"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageOfWellPeople"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/people"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSimdiBasla" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

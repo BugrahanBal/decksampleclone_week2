@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <padding
+                android:left="@dimen/circle_dimens"
+                android:right="@dimen/circle_dimens"/>
+            <size
+                android:width="@dimen/circle_width_height"
+                android:height="@dimen/circle_width_height"/>
+            <stroke android:width="@dimen/circle_dimens_small" android:color="@color/circle_cross_stroke" />
+
+        </shape>
+    </item>
+    <item>
+        <rotate
+            android:fromDegrees="135"
+            android:pivotX="50%"
+            android:pivotY="50%"
+            android:toDegrees="-90">
+            <shape android:shape="line">
+                <stroke android:width="@dimen/circle_dimens_small" android:color="@color/circle_cross_lines" />
+            </shape>
+        </rotate>
+    </item>
+    <item>
+        <rotate
+            android:fromDegrees="45"
+            android:pivotX="50%"
+            android:pivotY="50%"
+            android:toDegrees="-90">
+            <shape android:shape="line">
+                <stroke android:width="@dimen/circle_dimens_small" android:color="@color/circle_cross_lines" />
+            </shape>
+        </rotate>
+    </item>
+</layer-list>

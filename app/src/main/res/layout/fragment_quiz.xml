@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_quiz"
+    tools:ignore="ExtraText">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_start"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/activity_main_horizontal_margin" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_top"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="@dimen/activity_main_vertical_margin" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.89056087" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_end"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/activity_main_horizontal_margin" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/cricleCross"
+        android:layout_width="@dimen/circle_dimens_layout"
+        android:layout_height="@dimen/circle_dimens_layout"
+        android:src="@drawable/ic_cricle_cross"
+        android:text="Button"
+        app:layout_constraintRight_toLeftOf="@id/guide_end"
+        app:layout_constraintTop_toBottomOf="@id/guide_top" />
+
+    <ProgressBar
+        android:id="@+id/progressBarCircle"
+        android:layout_width="@dimen/circular"
+        android:layout_height="@dimen/circular"
+        android:indeterminateOnly="false"
+        android:progressDrawable="@drawable/circular_progressbar"
+        android:scaleX="-1"
+        app:layout_constraintBottom_toTopOf="@id/progressBar"
+        app:layout_constraintStart_toStartOf="@+id/guide_start" />
+    <TextView
+        android:id="@+id/textCountDown"
+        tools:text="20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/progressBarCircle"
+        app:layout_constraintEnd_toEndOf="@+id/progressBarCircle"
+        app:layout_constraintStart_toStartOf="@+id/guide_start"
+        app:layout_constraintTop_toTopOf="@+id/progressBarCircle"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/ratioOfProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/view_margin_xxlarge"
+        android:hint="3/10"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@id/progressBar"
+        app:layout_constraintEnd_toStartOf="@id/guide_end"
+        app:layout_constraintTop_toTopOf="@id/guide_top"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="@dimen/view_margin_xxxlarge"
+        app:layout_constraintEnd_toStartOf="@+id/guide_end"
+        app:layout_constraintStart_toStartOf="@+id/guide_start"
+        app:layout_constraintTop_toTopOf="@id/guide_top" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/questionOfQuiz"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="@dimen/cardView_medium"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        app:cardCornerRadius="@dimen/view_margin_medium"
+        app:layout_constraintBottom_toTopOf="@+id/firstAnswerOfQuiz"
+        app:layout_constraintEnd_toStartOf="@+id/guide_end"
+        app:layout_constraintStart_toStartOf="@+id/guide_start"
+        app:layout_constraintTop_toBottomOf="@id/progressBar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/questionText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical"
+                android:textSize="@dimen/textsize_xxlarge"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/firstAnswerOfQuiz"
+        style="@style/ButtonCorrectAnswer"
+        android:layout_width="@dimen/answer_button_width"
+        android:layout_height="@dimen/answer_button_height"
+        android:textSize="@dimen/textsize_large"
+        android:layout_marginLeft="@dimen/view_margin_xxlarges"
+        android:layout_marginTop="@dimen/view_margin_xxlarge"
+        app:layout_constraintBottom_toTopOf="@+id/thirdAnswerOfQuiz"
+        app:layout_constraintLeft_toRightOf="@+id/guide_start"
+        app:layout_constraintRight_toLeftOf="@+id/secondAnswerOfQuiz"
+        app:layout_constraintTop_toBottomOf="@+id/questionOfQuiz" >
+
+    </androidx.appcompat.widget.AppCompatButton>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/secondAnswerOfQuiz"
+        style="@style/ButtonFalseAnswers"
+        android:layout_width="@dimen/answer_button_width"
+        android:layout_height="@dimen/answer_button_height"
+        android:textSize="@dimen/textsize_large"
+        android:text="selam"
+        android:layout_marginTop="@dimen/view_margin_xxlarge"
+        android:layout_marginRight="@dimen/view_margin_xxlarge"
+        app:layout_constraintBottom_toTopOf="@+id/fourthAnswerOfQuiz"
+        app:layout_constraintLeft_toRightOf="@+id/firstAnswerOfQuiz"
+        app:layout_constraintRight_toLeftOf="@+id/guide_end"
+        app:layout_constraintTop_toBottomOf="@+id/questionOfQuiz" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/thirdAnswerOfQuiz"
+        style="@style/ButtonFalseAnswers"
+        android:layout_width="@dimen/answer_button_width"
+        android:layout_height="@dimen/answer_button_height"
+        android:layout_marginLeft="@dimen/view_margin_xxlarges"
+        android:textSize="@dimen/textsize_large"
+        android:text="selam"
+        app:layout_constraintBottom_toTopOf="@+id/guide_bottom"
+        app:layout_constraintLeft_toRightOf="@+id/guide_start"
+        app:layout_constraintRight_toLeftOf="@+id/fourthAnswerOfQuiz"
+        app:layout_constraintTop_toBottomOf="@+id/firstAnswerOfQuiz" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/fourthAnswerOfQuiz"
+        style="@style/ButtonFalseAnswers"
+        android:layout_width="@dimen/answer_button_width"
+        android:layout_height="@dimen/answer_button_height"
+        android:text="selam"
+        android:textSize="@dimen/textsize_large"
+        android:layout_marginRight="@dimen/view_margin_xxlarge"
+        app:layout_constraintBottom_toTopOf="@id/guide_bottom"
+        app:layout_constraintEnd_toStartOf="@+id/guide_end"
+        app:layout_constraintStart_toEndOf="@+id/thirdAnswerOfQuiz"
+        app:layout_constraintTop_toBottomOf="@+id/secondAnswerOfQuiz" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

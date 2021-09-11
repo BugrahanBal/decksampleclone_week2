@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">DeckSampleClone</string>
+
+
+    <string name="fragment_welcome_title">Kelime Testi</string>
+    <string name="fragment_welcome_description">"Kelime Testi,Sizin dil seviyenizi ölçmek içindir.Test sonunda doğru ve yanlışlarınızı görebileceksiniz!"</string>
+
+
+
+</resources>
