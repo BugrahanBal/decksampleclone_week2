@@ -10,7 +10,6 @@ class ActivitySplash : AppCompatActivity() {
 
     private val DELAY  :  Long = 3 * 1000 //Splash delay time
 
-    private lateinit var myToken : String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
